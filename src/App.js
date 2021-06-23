@@ -6,6 +6,7 @@ import "./App.css";
 import AddTutorial from "./components/add-tutorial.component";
 import Tutorial from "./components/tutorial.component";
 import TutorialsList from "./components/tutorials-list.component";
+import GithubHome from "./components/github/home.component";
 
 class App extends Component {
   render() {
@@ -26,6 +27,11 @@ class App extends Component {
                 Add
               </Link>
             </li>
+            <li className="nav-item">
+              <Link to={"/github"} className="nav-link">
+                Github
+              </Link>
+            </li>
           </div>
         </nav>
 
@@ -34,6 +40,7 @@ class App extends Component {
             <Route exact path={["/", "/tutorials"]} component={TutorialsList} />
             <Route exact path="/add" component={AddTutorial} />
             <Route path="/tutorials/:id" component={Tutorial} />
+            <Route path="/github" component={GithubHome} />
           </Switch>
         </div>
       </Router>

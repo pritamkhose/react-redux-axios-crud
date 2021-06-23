@@ -80,6 +80,18 @@ app.delete("/api/tutorials", cors(), (req, res) => {
   return res.json(tutorials);
 });
 
+app.get("/users/pritamkhose/repos", cors(), (req, res) => {
+    return res.json(require("./repos.json"));
+});
+
+app.get("/users/pritamkhose/followers", cors(), (req, res) => {
+  return res.json(require("./followers.json"));
+});
+
+app.get("/users/pritamkhose/following", cors(), (req, res) => {
+  return res.json(require("./following.json"));
+});
+
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
